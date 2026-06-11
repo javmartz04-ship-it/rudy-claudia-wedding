@@ -2,91 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mobile Preview — Rudy & Claudia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600&display=swap" rel="stylesheet" />
-<style>
-  :root{ --phone-w:390px; --phone-h:844px; }
-  *{box-sizing:border-box;}
-  html,body{margin:0;height:100%;}
-  body{
-    background:#11151f;
-    color:#cdd6ea;
-    font-family:'EB Garamond',Georgia,serif;
-    min-height:100%;
-    display:flex;flex-direction:column;align-items:center;
-    padding:34px 16px 60px;
-    gap:22px;
-  }
-  .cap{
-    text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;
-  }
-  .cap .ey{
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#7d8cb0;font-weight:600;
-  }
-  .cap h1{font-size:26px;font-weight:600;margin:0;color:#eaf0ff;letter-spacing:.01em;}
-  .cap p{margin:0;font-size:15px;color:#8893b3;max-width:460px;line-height:1.5;}
-  /* phone bezel */
-  .phone{
-    position:relative;
-    width:calc(var(--phone-w) + 24px);
-    border-radius:54px;
-    background:linear-gradient(160deg,#2a2f3c,#171a22);
-    padding:12px;
-    box-shadow:0 40px 90px -30px rgba(0,0,0,.8), 0 0 0 2px rgba(255,255,255,.05) inset;
-  }
-  .screen{
-    position:relative;
-    width:var(--phone-w);
-    height:var(--phone-h);
-    border-radius:42px;
-    overflow:hidden;
-    background:#F7F3EA;
-  }
-  .notch{
-    position:absolute;top:0;left:50%;transform:translateX(-50%);
-    width:150px;height:28px;background:#11151f;border-radius:0 0 18px 18px;z-index:5;
-  }
-  iframe{
-    border:0;width:var(--phone-w);height:var(--phone-h);display:block;background:#F7F3EA;
-  }
-  .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-  .btn{
-    font-family:inherit;font-size:13px;letter-spacing:.04em;color:#cdd6ea;cursor:pointer;
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-    border-radius:999px;padding:9px 18px;transition:.15s;
-  }
-  .btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);}
-  a.open{color:#8aa6e6;text-decoration:none;font-size:14px;border-bottom:1px solid rgba(138,166,230,.4);}
-</style>
+<title>Mobile Preview — Rudy &amp; Claudia</title>
+<meta http-equiv="refresh" content="0; url=https://rudy-and-claudia.github.io/mobile-preview.html" />
+<script>location.replace('https://rudy-and-claudia.github.io/mobile-preview.html');</script>
 </head>
-<body>
-  <div class="cap">
-    <span class="ey">Mobile preview</span>
-    <h1>Rudy &amp; Claudia — phone view</h1>
-    <p>This is the live invitation shown at iPhone width (390&nbsp;px). Tap the envelope to open it, then scroll inside the phone.</p>
-  </div>
-
-  <div class="controls">
-    <button class="btn" id="reload" type="button">Replay from envelope</button>
-    <a class="open" href="index.html">Open full version →</a>
-  </div>
-
-  <div class="phone">
-    <div class="screen">
-      <div class="notch"></div>
-      <iframe id="frame" src="index.html" title="Wedding invitation mobile view"></iframe>
-    </div>
-  </div>
-
-  <script>
-    const frame = document.getElementById('frame');
-    document.getElementById('reload').addEventListener('click', () => {
-      try { frame.contentWindow.sessionStorage.removeItem('rc_opened'); } catch(e){}
-      frame.src = frame.src.split('#')[0].split('?')[0] + '?t=' + Date.now();
-    });
-  </script>
-</body>
+<body></body>
 </html>
