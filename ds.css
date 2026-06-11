@@ -1,0 +1,240 @@
+/* =============================================================================
+   Javier Martinez Design System — Colors & Type
+   ============================================================================= */
+
+/* ---- Fonts: the invitation overrides every family to EB Garamond / Pinyon
+        Script (loaded in index.html), so no font import is needed here. ---- */
+
+:root {
+  /* =====  BRAND PALETTE  ===== */
+  --amber-orange:  #E8901A;   /* Primary brand — RGB 232 144 26 */
+  --amber-light:   #F09A46;   /* Lighter amber for hover / accents */
+  --amber-dark:    #C48010;   /* Darker amber — pressed / deep accents */
+  --white:         #FFFFFF;
+  --background:    #0C0C0C;   /* Near-black canvas — RGB 12 12 12 */
+  --dark-grey:     #1E1E1E;   /* Card surface */
+  --medium-grey:   #3A3A3A;   /* Borders, divider */
+  --light-grey:    #9A9A9A;   /* Secondary text */
+
+  /* =====  SEMANTIC — SURFACES  ===== */
+  --bg:            var(--background);
+  --surface-1:     #151515;   /* Subtle lift off bg */
+  --surface-2:     var(--dark-grey);
+  --surface-3:     #262626;   /* Hover / inset */
+  --overlay:       rgba(12, 12, 12, 0.72);
+
+  /* =====  SEMANTIC — FOREGROUNDS  ===== */
+  --fg-1:          var(--white);         /* Primary text */
+  --fg-2:          #CFCFCF;              /* Body */
+  --fg-3:          var(--light-grey);    /* Secondary / labels */
+  --fg-muted:      #6A6A6A;              /* Tertiary / disabled */
+  --fg-accent:     var(--amber-orange);
+
+  /* =====  SEMANTIC — BORDERS  ===== */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-1:      rgba(255, 255, 255, 0.10);
+  --border-2:      var(--medium-grey);
+  --border-accent: var(--amber-orange);
+
+  /* =====  STATE  ===== */
+  --success:       #4CAF7C;
+  --warn:          var(--amber-orange);
+  --error:         #E05656;
+  --info:          #6EA8E0;
+
+  /* =====  GLOW / SHADOW SYSTEM  ===== */
+  --glow-amber-sm: 0 0 12px rgba(232, 144, 26, 0.35);
+  --glow-amber:    0 0 28px rgba(232, 144, 26, 0.45);
+  --glow-amber-lg: 0 0 60px rgba(232, 144, 26, 0.55);
+  --shadow-card:   0 1px 0 rgba(255,255,255,0.03) inset, 0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lift:   0 16px 48px rgba(0,0,0,0.55), 0 2px 0 rgba(255,255,255,0.04) inset;
+  --shadow-press:  0 1px 0 rgba(255,255,255,0.04) inset, 0 2px 6px rgba(0,0,0,0.5);
+
+  /* =====  RADIUS  ===== */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-pill: 999px;
+
+  /* =====  SPACING (4pt)  ===== */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* =====  TYPE — FAMILIES  ===== */
+  --font-display: 'Montserrat', 'Arial Black', system-ui, sans-serif;
+  --font-body:    'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* =====  TYPE — SCALE  ===== */
+  --t-display:  clamp(56px, 7vw, 104px);
+  --t-h1:       clamp(40px, 5vw, 64px);
+  --t-h2:       clamp(32px, 3.6vw, 44px);
+  --t-h3:       28px;
+  --t-h4:       22px;
+  --t-h5:       18px;
+  --t-body-lg:  18px;
+  --t-body:     16px;
+  --t-body-sm:  14px;
+  --t-caption:  12px;
+  --t-eyebrow:  11px;
+
+  /* =====  MOTION  ===== */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:    cubic-bezier(0.4, 0, 1, 1);
+  --ease-std:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   140ms;
+  --dur-med:    240ms;
+  --dur-slow:   420ms;
+}
+
+/* =============================================================================
+   SEMANTIC TEXT STYLES
+   ============================================================================= */
+
+body {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display — for hero moments; ALL CAPS by design convention */
+.display,
+h1.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--t-display);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+.display .accent,
+h1.display .accent { color: var(--amber-orange); }
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--t-h1);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h2);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-h3);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-h4);
+  line-height: 1.3;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h5 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--t-h5);
+  line-height: 1.4;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--fg-2);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.body-lg   { font-size: var(--t-body-lg); line-height: 1.55; }
+.body-sm   { font-size: var(--t-body-sm); line-height: 1.5; }
+.caption   { font-size: var(--t-caption); color: var(--fg-3); line-height: 1.4; }
+
+/* Eyebrow — the small "• PRIMARY LOGO" label treatment from brand guide */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amber-orange);
+  box-shadow: var(--glow-amber-sm);
+}
+
+/* Mono — for specs, codes, metadata */
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  color: var(--fg-2);
+  letter-spacing: 0.01em;
+}
+
+/* Links */
+a {
+  color: var(--amber-orange);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--amber-light); }
+
+/* Accent word helper */
+.accent { color: var(--amber-orange); }
+
+/* =============================================================================
+   UTILITY — selection, focus, scrollbar
+   ============================================================================= */
+::selection { background: var(--amber-orange); color: #1E1E1E; }
+:focus-visible {
+  outline: 2px solid var(--amber-orange);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
